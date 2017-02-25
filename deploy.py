@@ -12,6 +12,5 @@ repo.remotes['greedyMarket-aggregate'].fetch( verbose = True )
 
 commits_behind = repo.iter_commits('HEAD..greedyMarket-aggregate/{0}'.format(deployConf['branch']))
 
-if len([1 for c in commits_behind]) > 0:
-  repo.git.checkout('remotes/origin/{0}'.format(deployConf['branch']))
-  print 'updated on {0}'.format(deployConf['branch'])
+repo.git.checkout('remotes/origin/{0}'.format(deployConf['branch']))
+
