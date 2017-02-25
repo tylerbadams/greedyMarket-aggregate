@@ -6,6 +6,7 @@ git remote add greedyMarket-aggregate https://github.com/tylerbadams/greedyMarke
 git fetch greedyMarket-aggregate
 git checkout -f greedyMarket-aggregate/master
 
-echo "0 0 */1 * * ${PWD}/deploy.py" | tee -a /var/spool/cron/root
+if ! grep -Fxq "0 0 */1 * * ${PWD}/deploy.py" /var/spool/cront/root; then
+   echo "0 0 */1 * * ${PWD}/deploy.py" | tee -a /var/spool/cron/root
 
 python deploy.py
