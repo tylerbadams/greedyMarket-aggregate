@@ -12,5 +12,5 @@ repo.remotes['greedyMarket-aggregate'].fetch( verbose = True )
 
 commits_behind = repo.iter_commits('HEAD..greedyMarket-aggregate/{0}'.format(deployConf['branch']))
 
-repo.git.checkout('remotes/origin/{0}'.format(deployConf['branch']))
+repo.git.checkout('remotes/greedyMarket-aggregate/{0}'.format(deployConf['branch']))
 
